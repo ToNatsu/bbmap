@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barrier-free Map</title>
+    <link rel="stylesheet" href="/stylesheet/main.css" />
+    <script language="JavaScript">
+      window.onload = function () {
+      var nav = document.getElementById('nav-wrapper');
+      var hamburger = document.getElementById('js-hamburger');
+      var blackBg = document.getElementById('js-black-bg');
+
+      hamburger.addEventListener('click', function () {
+          nav.classList.toggle('open');
+      });
+      blackBg.addEventListener('click', function () {
+          nav.classList.remove('open');
+      });
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <div id="nav-wrapper" class="nav-wrapper">
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
+        </div>
+        <nav class="sp-nav">
+          <ul>
+            <li><a href="/map">マップ</a></li>
+            <li><a href="/howto">使い方</a></li>
+            <li><a href="/users/add">追加依頼</a></li>
+            <li><a href="/users">追加予定</a></li>
+          </ul>
+        </nav>
+        <div class="black-bg" id="js-black-bg"></div>
+       </div>
+      <div class="header-char">
+          <a href="/">Barrier-free Map</a>
+      </div>
+      <div class="header-link">
+        <ul>
+          <li>
+            <a href="/map">マップ</a>
+          </li>
+          <li>
+            <a href="/howto">使い方</a>
+          </li>
+          <li>
+            <a href="/users/add">追加依頼</a>
+          </li>
+          <li>
+            <a href="/users">追加予定</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="image">
+      <p>暮らしを快適に。 </p>
+    </div>
+
+    <div class="main">
+      <div class="ele_in">
+        <h5>改札内エレベーター</h5>
+      </div>
+      <div class="ele_out">
+        <h5>改札外エレベーター</h5>
+      </div>
+      <div class="singo">
+        <h5>音響信号</h5>
+      </div>
+      <div class="hotel">
+        <h5>ホテル</h5>
+      </div>
+      <div class="ryokan">
+        <h5>旅館</h5>
+      </div>
+      <div class="toilet">
+        <h5>トイレ</h5>
+      </div>
+      <div class="parking">
+        <h5>駐車場</h5>
+      </div>
+      <div class="AED">
+        <h5>AED</h5>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-char">
+        Barrier-free Map
+      </div>
+        <div class="footer-link">
+          <a class="link" href="/howto">使い方</a>
+          <a class="link" href="/map">マップ</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

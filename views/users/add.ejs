@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barrier-free Map</title>
+    <link rel="stylesheet" href="/stylesheet/users.css" />
+    <script language="JavaScript">
+      function check() {
+          if(document.form1.type.value == "0") {
+              alert("バリアフリーの種類を入力してください。");
+              return false;
+          }
+          if(document.form1.detail.value == "") {
+              alert("緯度・経度を入力してください。");
+              return false;
+          }
+          if(document.form1.name.value == "") {
+              document.form1.name.value = "匿名";
+              return document.form1.name.value;
+          }
+      };
+
+      window.onload = function () {
+      var nav = document.getElementById('nav-wrapper');
+      var hamburger = document.getElementById('js-hamburger');
+      var blackBg = document.getElementById('js-black-bg');
+
+      hamburger.addEventListener('click', function () {
+          nav.classList.toggle('open');
+      });
+      blackBg.addEventListener('click', function () {
+          nav.classList.remove('open');
+      });
+      };
+      </script>
+  </head>
+
+  <body class="container">
+    <header>
+      <div id="nav-wrapper" class="nav-wrapper">
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
+        </div>
+        <nav class="sp-nav">
+          <ul>
+            <li><a href="/map">マップ</a></li>
+            <li><a href="/howto">使い方</a></li>
+            <li><a href="/users/add">追加依頼</a></li>
+            <li><a href="/users">追加予定</a></li>
+          </ul>
+        </nav>
+        <div class="black-bg" id="js-black-bg"></div>
+      </div>
+      <div class="header-char">
+        <a href="/">Barrier-free Map</a>
+      </div>
+      <div class="header-link">
+        <ul>
+          <li>
+            <a href="/map">マップ</a>
+          </li>
+          <li>
+            <a href="/howto">使い方</a>
+          </li>
+          <li>
+            <a href="/users/add">追加依頼</a>
+          </li>
+          <li>
+            <a href="/users">追加予定</a>
+          </li>
+        </ul>
+      </div>  
+    </header>
+    
+    <div role="main">
+      <div class="board-section">
+        <h2>掲示板へようこそ</h2>
+        <p></p>
+        <form method="post" name="form1" class="form-section" action="/users/add" onSubmit="return check()">
+          <p>名前</p>
+        <input type="text" name="name" id="name" class="form-control" placeholder="名前">
+          <p>バリアフリーの種類</p>
+          <div class="type-select">
+            <select class="form-control" name="type" id="type">
+              <option value="0">選択してください</option>
+              <option value="改札内エレベーター">改札内エレベーター</option>
+              <option value="改札外エレベーター">改札外エレベーター</option>
+              <option value="音響信号">音響信号</option>
+              <option value="ホテル">ホテル</option>
+              <option value="旅館">旅館</option>
+              <option value="トイレ">トイレ</option>
+              <option value="駐車場">駐車場</option>
+              <option value="AED">AED</option>
+            </select>
+          </div>
+          <p>緯度・経度</p>
+        <textarea name="detail" id="detail" class="form-control" type="text" rows="8" cols="30"></textarea>
+          <br/>
+          <input type="submit" value="送信" class="button">
+        </form>
+        </div>
+    </div>
+
+    <footer>
+      <div class="footer-char">
+        Barrier-free Map
+      </div>
+      <div class="footer-link">
+        <a class="link" href="/howto">使い方</a>
+        <a class="link" href="/map">マップ</a>
+      </div>
+    </footer>
+  </body>
+</html>

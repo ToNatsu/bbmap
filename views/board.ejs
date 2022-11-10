@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barrier-free Map</title>
+    <link rel="stylesheet" href="/stylesheet/board.css" />
+  </head>
+  <body>
+    <header>
+      <div id="nav-wrapper" class="nav-wrapper">
+        <div class="hamburger" id="js-hamburger">
+          <span class="hamburger__line hamburger__line--1"></span>
+          <span class="hamburger__line hamburger__line--2"></span>
+          <span class="hamburger__line hamburger__line--3"></span>
+        </div>
+        <nav class="sp-nav">
+          <ul>
+            <li><a href="/map">マップ</a></li>
+            <li><a href="/howto">使い方</a></li>
+            <li><a href="/users/add">追加依頼</a></li>
+            <li><a href="/users">追加予定</a></li>
+          </ul>
+        </nav>
+        <div class="black-bg" id="js-black-bg"></div>
+      </div>
+      <div class="header-char">
+        <a href="/">Barrier-free Map</a>
+      </div>
+      <div class="header-link">
+        <ul>
+          <li>
+            <a href="/map">マップ</a>
+          </li>
+          <li>
+            <a href="/howto">使い方</a>
+          </li>
+          <li>
+            <a href="/board">追加依頼</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- 掲示板のひな型作成 -->
+    <div class="board-section">
+      <h2>掲示板へようこそ</h2>
+      <!-- この中に挿入していく -->
+      <p></p>
+
+      <form method="post" class="form-section">
+        <p>名前</p>
+        <input id="inputTitle" type="text" placeholder="名前" rows="1"/>
+        <p>バリアフリーの種類</p>
+        <div class="type-select">
+          <select class="form-control" id="type">
+            <option value="0">選択してください</option>
+            <option value="1">改札内エレベーター</option>
+            <option value="2">改札外エレベーター</option>
+            <option value="3">音響信号</option>
+            <option value="4">ホテル</option>
+            <option value="5">旅館</option>
+            <option value="6">トイレ</option>
+          </select>
+        </div>
+        <p>内容</p>
+        <textarea title="form" id="inputContent" type="text" rows="8" cols="30"></textarea>
+
+        <br/>
+        <button id="submitButton" type="submit" class="button">送信</button>
+      </form>
+
+      <div class="thread-section">
+       
+      </div>
+      <table class="table">
+        <% for(let i in content) { %>
+          <tr>
+            <% let obj = content[i]; %>
+            <th class="name">
+              <%= obj.name %>
+            </th>
+            <th class="type">
+              <%= obj.type %>
+            </th>
+            <th class="detail">
+              <%= obj.detail %>
+            </th>
+          </tr>
+          <% } %>
+      </table>
+    </div>
+
+    <footer>
+      <div class="footer-char">
+        Barrier-free Map
+      </div>
+        <div class="footer-link">
+          <a class="link" href="/howto">使い方</a>
+          <a class="link" href="/map">マップ</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

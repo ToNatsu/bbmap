@@ -1,0 +1,325 @@
+body {
+    font-family: "Avenir Next";
+    /* ページ左右の余白の削除 */
+    margin: 0px;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    /* ページ上部の余白の削除 */
+    margin: 0px;
+}
+
+header {
+    background-color: #223843;
+    color: #fff;
+    height: 90px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-char {
+    font-size: 36px;
+    font-weight: bold;
+    float: left;
+    padding: 20px 20px;
+}
+
+.header-char a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-link a:hover {
+    background-color: rgba(113, 113, 113, 0.5);
+}
+
+.header-link li {
+    float: left;
+    display: block;
+}
+
+.header-link a {
+    line-height: 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    text-decoration: none;
+    float: left;
+    list-style: none;
+    float:left;
+    transition: all 0.5s;
+}
+
+.hamburger {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 300;
+}
+  
+.hamburger__line {
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    right: 0;
+    background-color: #fff;
+    transition: all 0.5s;
+    margin-top: 2px;
+}
+
+.sp-nav ul {
+    margin-top: 100px;
+}
+
+.sp-nav li {
+    list-style: none;
+}
+
+.sp-nav a {
+    font-weight: bolder;
+    font-family: 'Osaka';
+    text-decoration: none;
+    line-height: 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 23px;
+    color: #fff;
+    font-family: "游ゴシック";
+    font-weight: bold;
+}
+  
+.hamburger__line--1 {
+    top: 1px;
+}
+  
+.hamburger__line--2 {
+    top: 18px;
+}
+  
+.hamburger__line--3 {
+    top: 36px;
+}
+  
+.open .hamburger__line--1 {
+    transform: rotate(-45deg);
+    top: 11px;
+}
+  
+.open .hamburger__line--2 {
+    opacity: 0;
+}
+  
+.open .hamburger__line--3 {
+    transform: rotate(45deg);
+    top: 11px;
+}
+  
+.sp-nav {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 40%;
+    height: 100vh;
+    background-color: #314a56eb;
+    transition: all 0.5s;
+    z-index: 200;
+    overflow-y: auto;
+}
+
+.sp-nav a:hover {
+    background-color: rgba(113, 113, 113, 0.5);
+}
+
+.open .sp-nav {
+    right: 0;
+}
+  
+.black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 100;
+}
+  
+.open .black-bg {
+    opacity: 0.3;
+    visibility: visible;
+}
+
+.image {
+    background-image: radial-gradient(ellipse at center, rgba(255,255,255,0) 70%,rgba(255,255,255,0.5) 90%,rgba(255,255,255,1) 130%),url(/image/car_chair.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.8;
+    position: relative;
+}
+
+.image p {
+    font-family: "游明朝";
+    font-weight: bold;
+    font-size: 35px;
+    position: absolute;
+    color: white;
+    text-shadow: 3px 3px 2px #000000;
+    background-color: rgba(255,255,255,0.3);
+    top: 87%;
+    left: 35%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding-left: 20px;
+}
+
+.main {
+    background-color: #EFF1F3;
+    padding: 50px 50px;
+}
+
+.main p {
+    font-size: 18px;
+    color: #223843;
+}
+
+h5 {
+    font-size: 23px;
+    padding-top: 3%;
+    padding-left: 20%;
+    text-align: center;
+}
+
+.ele_in {
+    height: 200px;
+    background-image: url(/image/elevator_door_open.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+.ele_out {
+    height: 200px;
+    background-image: url(/image/elevator_door_close.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+.singo {
+    height: 200px;
+    background-image: url(/image/shingou_hokousya_blue.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+.hotel {
+    height: 200px;
+    background-image: url(/image/building_hotel_small.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+.ryokan {
+    height: 200px;
+    background-image: url(/image/building_ryokan.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+.toilet {
+    height: 200px;
+    background-image: url(/image/toilet_mark.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+.parking {
+    height: 200px;
+    background-image: url(/image/car_back.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+.AED {
+    height: 200px;
+    background-image: url(/image/shinpai_AED_mark.png);
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: left;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #D77A61;
+    height: 100px;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    line-height: 50px;
+    width: auto;
+    bottom: 0;
+}
+
+.footer-char {
+    font-size: 32px;
+    font-weight: bold;
+    float: left;
+}
+
+.link {
+    float: right;
+    padding: 0px 20px;
+}
+
+.footer-link a {
+    padding-bottom: 20px;
+    color: white;
+    display: block;
+    text-decoration: none;
+}

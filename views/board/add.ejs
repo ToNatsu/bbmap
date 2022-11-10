@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barrier-free Map</title>
+    <link rel="stylesheet" href="/stylesheet/users.css" />
+  </head>
+  <body class="container">
+    <header>
+      <div class="header-char">
+        <a href="/">Barrier-free Map</a>
+      </div>
+      <div class="header-link">
+        <ul>
+          <li>
+            <a href="/map">マップ</a>
+          </li>
+          <li>
+            <a href="/howto">使い方</a>
+          </li>
+          <li>
+            <a href="/board">追加依頼</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div role="main">
+      <table class="table">
+        <% for(var i in content) { %>
+          <tr>
+            <% var obj = content[i]; %>
+            <th><%= obj.name %></th>
+            <td><%= obj.type %></td>
+            <td><%= obj.detail %></td>
+          </tr>
+        <% } %>
+      </table>
+    </div>
+
+    <footer>
+      <div class="footer-char">
+        Barrier-free Map
+      </div>
+      <div class="footer-link">
+        <a class="link" href="/howto">使い方</a>
+      </div>
+      </footer>
+  </body>
+</html>
