@@ -3,7 +3,8 @@ const app = express();
 var path = require('path');
 const mysql = require('mysql');
 const cors = require('cors');
-const PORT = 3000;
+const server = http.createServer(app);
+/* const PORT = 3000; */
 
 var mainRouter = require('./routes/main');
 var boardRouter = require('./routes/board');
@@ -55,4 +56,8 @@ app.get("/test", (req, res) => {
     res.render('./test');
 });
 
-app.listen(PORT, console.log("server running"));
+server.listen(process.env.PORT || 3000, () => {
+    console.log("listen on 3000");
+});
+
+/* app.listen(PORT, console.log("server running")); */
