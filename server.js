@@ -26,6 +26,10 @@ app.use('/board', boardRouter);
 app.use('/users', usersRouter);
 app.use('/hello', hello);
 
+server.listen(process.env.PORT || 3000, () => {
+    console.log("listenin on 3000");
+});
+
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -55,10 +59,6 @@ app.get("/gmap", (req, res) => {
 
 app.get("/test", (req, res) => {
     res.render('./test');
-});
-
-server.listen(process.env.PORT || 3000, () => {
-    console.log("listenin on 3000");
 });
 
 /* app.listen(PORT, console.log("server running")); */
