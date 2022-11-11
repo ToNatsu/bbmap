@@ -26,9 +26,9 @@ app.use('/board', boardRouter);
 app.use('/users', usersRouter);
 app.use('/hello', hello);
 
-server.listen(process.env.PORT || 3000, () => {
+/* server.listen(process.env.PORT || 3000, () => {
     console.log("listenin on 3000");
-});
+}); */
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -45,9 +45,9 @@ app.get("/map", (req, res) => {
     res.render('./map.ejs');
 });
 
-/* app.get("/users", (req, res) => {
+app.get("/users", (req, res) => {
     res.render('./users');
-}); */
+});
 
 app.get("/board", (req, res) => {
     res.render('./board');
@@ -61,12 +61,4 @@ app.get("/test", (req, res) => {
     res.render('./test');
 });
 
-app.get("/users/add", (req, res) => {
-    res.render('./add.ejs');
-});
-
-app.get("/users", (req, res) => {
-    res.render('./index.ejs');
-});
-
-/* app.listen(PORT, console.log("server running")); */
+app.listen(PORT, console.log("server running"));
