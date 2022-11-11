@@ -45,9 +45,9 @@ app.get("/map", (req, res) => {
     res.render('./map.ejs');
 });
 
-app.get("/users", (req, res) => {
+/* app.get("/users", (req, res) => {
     res.render('./users');
-});
+}); */
 
 app.get("/board", (req, res) => {
     res.render('./board');
@@ -59,6 +59,14 @@ app.get("/gmap", (req, res) => {
 
 app.get("/test", (req, res) => {
     res.render('./test');
+});
+
+app.get("/users/add", (req, res) => {
+    res.render('./add.ejs');
+});
+
+app.get("/users", (req, res) => {
+    res.render('./index.ejs');
 });
 
 /* app.listen(PORT, console.log("server running")); */
