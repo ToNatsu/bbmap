@@ -168,6 +168,7 @@ header {
 .main {
     background-color: #EFF1F3;
     padding: 50px 50px;
+    text-align:center;  
 }
 
 .main h2 {
@@ -177,13 +178,6 @@ header {
     width: 30%;
     text-align:center;  
     margin:0 auto;
-}
-
-.main a {
-    color: #223843;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 .main p {

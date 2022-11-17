@@ -94,7 +94,7 @@
             },
             {
               "name": "梅田駅",
-              "type": "shinzyuku",
+              "type": "改札外エレベーター",
               "lat": 34.70321427033319,
               "lng": 135.49764338944328,
               "url": "https://goo.gl/maps/ckA28ah3BB2eUJre8"
@@ -118,59 +118,59 @@
             }
 
             for (let i = 0; i < markerData.length; i++) {
-            //マーカー作成
-            // 緯度経度のデータ作成
-            const markerLatLng = new google.maps.LatLng({
-              lat: markerData[i]['lat'],
-              lng: markerData[i]['lng']
-            });
+                //マーカー作成
+                // 緯度経度のデータ作成
+                const markerLatLng = new google.maps.LatLng({
+                lat: markerData[i]['lat'],
+                lng: markerData[i]['lng']
+                });
 
-            //マーカーオプション設定
-            const markerOption = {
-              position: markerLatLng, // マーカーを立てる位置を指定
-              map: map, // マーカーを立てる地図を指定
-            };
+                //マーカーオプション設定
+                const markerOption = {
+                position: markerLatLng, // マーカーを立てる位置を指定
+                map: map, // マーカーを立てる地図を指定
+                };
 
-            /* if (markerData[i]['type'] === "改札内エレベーター") {
-              markerOption.icon = "image/elevator_door_open.png";
-            }
-            if (markerData[i]['type'] === "改札外エレベーター") {
-              markerOption.icon = "image/elevator_door_close.png"
-            }
-            if (markerData[i]['type'] === "音響信号") {
-              markerOption.icon = "image/shingou_hokousya_blue.png"
-            }
-            if (markerData[i]['type'] === "ホテル") {
-              markerOption.icon = "image/building_hotel_small.png"
-            }
-            if (markerData[i]['type'] === "旅館") {
-              markerOption.icon = "image/building_ryokan.png"
-            }
-            if (markerData[i]['type'] === "トイレ") {
-              markerOption.icon = "image/toilet_mark.png"
-            }
-            if (markerData[i]['type'] === "駐車場") {
-              markerOption.icon = "image/car_back.png"
-            }
-            if (markerData[i]['type'] === "AED") {
-              markerOption.icon = "image/shinpai_AED_mark.png"
-            } */
+                /* if (markerData[i]['type'] === "改札内エレベーター") {
+                markerOption.icon = "image/elevator_door_open.png";
+                }
+                if (markerData[i]['type'] === "改札外エレベーター") {
+                markerOption.icon = "image/elevator_door_close.png"
+                }
+                if (markerData[i]['type'] === "音響信号") {
+                markerOption.icon = "image/shingou_hokousya_blue.png"
+                }
+                if (markerData[i]['type'] === "ホテル") {
+                markerOption.icon = "image/building_hotel_small.png"
+                }
+                if (markerData[i]['type'] === "旅館") {
+                markerOption.icon = "image/building_ryokan.png"
+                }
+                if (markerData[i]['type'] === "トイレ") {
+                markerOption.icon = "image/toilet_mark.png"
+                }
+                if (markerData[i]['type'] === "駐車場") {
+                markerOption.icon = "image/car_back.png"
+                }
+                if (markerData[i]['type'] === "AED") {
+                markerOption.icon = "image/shinpai_AED_mark.png"
+                } */
 
-            marker[i] = new google.maps.Marker(markerOption);
-            
-            infoWindow[i] = new google.maps.InfoWindow({
-            content: `<div class="custom-info">
-                <div class="custom-info-item name">
-                ${markerData[i]['name']}
-                </div>
-                <div class="custom-info-item google-map">
-                <a href="${markerData[i]['url']}" target="_blank">MAP</a>
-                </div>
-                </div>` // 吹き出しに表示する内容
-            });
+                marker[i] = new google.maps.Marker(markerOption);
+                
+                infoWindow[i] = new google.maps.InfoWindow({
+                content: `<div class="custom-info">
+                    <div class="custom-info-item name">
+                    ${markerData[i]['name']}
+                    </div>
+                    <div class="custom-info-item google-map">
+                    <a href="${markerData[i]['url']}" target="_blank">MAP</a>
+                    </div>
+                    </div>` // 吹き出しに表示する内容
+                });
 
-            // 各マーカーにクリックイベントを追加
-            markerEvent(i);
+                // 各マーカーにクリックイベントを追加
+                markerEvent(i);
             }
           };
         </script>

@@ -26,18 +26,19 @@
         </ul>
       </div>
     </header>
-    <div role="main">
-      <table class="table">
-        <% for(var i in content) { %>
-          <tr>
-            <% var obj = content[i]; %>
-            <th><%= obj.name %></th>
-            <td><%= obj.type %></td>
-            <td><%= obj.detail %></td>
-          </tr>
-        <% } %>
-      </table>
-    </div>
+    <div role="main" class="main">
+      <% for(var i in content) { %>
+        <table class="table">
+        <tr>
+          <% var obj = content[i]; %>
+          <th class="name">◆<%= obj.name %></th>
+          <td class="type">種類：<%= obj.type %></td>
+          <td class="lonlat"><%= obj.lonlat %></td>
+          <td class="url">URL：<%= obj.url %></td>
+        </tr>
+        </table>
+      <% } %>
+  </div>
 
     <footer>
       <div class="footer-char">

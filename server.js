@@ -5,12 +5,14 @@ const mysql = require('mysql');
 const cors = require('cors');
 const http = require("http");
 const server = http.createServer(app);
-/* const PORT = 3000; */
+const PORT = 3000;
 
 var mainRouter = require('./routes/main');
 var boardRouter = require('./routes/board');
 var usersRouter = require('./routes/user');
 var hello = require('./routes/hello');
+var gmap = require('./routes/gmap');
+var gmap2 = require('./routes/gmap2');
 
 // テンプレートエンジンの指定
 app.set("view engine", "ejs");
@@ -25,6 +27,8 @@ app.use('/', mainRouter);
 app.use('/board', boardRouter);
 app.use('/users', usersRouter);
 app.use('/hello', hello);
+app.use('/gmap', gmap);
+app.use('/gmap2', gmap2);
 
 /* server.listen(process.env.PORT || 3000, () => {
     console.log("listenin on 3000");
@@ -55,6 +59,10 @@ app.get("/board", (req, res) => {
 
 app.get("/gmap", (req, res) => {
     res.render('./gmap');
+});
+
+app.get("/gmap2", (req, res) => {
+    res.render('./gmap2');
 });
 
 app.get("/test", (req, res) => {

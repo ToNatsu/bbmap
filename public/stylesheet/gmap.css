@@ -165,9 +165,10 @@ header {
     visibility: visible;
 }
 
-#sample {
-    width: 700px;
-    height: 400px;
+#map {
+    width: 80%;
+    height: 800px;
+    margin:0 auto;
 }
 
 html, body {

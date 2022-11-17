@@ -2,9 +2,10 @@
 
 module.exports = (sequelize, DataTypes) => {
     const Detail = sequelize.define('Detail', {
-        name: DataTypes.STRING,
         type: DataTypes.STRING,
-        detail: DataTypes.STRING
+        name: DataTypes.STRING,
+        lonlat: DataTypes.STRING,
+        url: DataTypes.STRING
     }, {});
     Detail.associate = function(models) {
         // associations can be defined here

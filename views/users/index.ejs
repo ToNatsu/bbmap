@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="/stylesheet/users.css" />
     <script language="JavaScript">
       window.onload = function () {
-      var nav = document.getElementById('nav-wrapper');
-      var hamburger = document.getElementById('js-hamburger');
-      var blackBg = document.getElementById('js-black-bg');
+        var nav = document.getElementById('nav-wrapper');
+        var hamburger = document.getElementById('js-hamburger');
+        var blackBg = document.getElementById('js-black-bg');
 
-      hamburger.addEventListener('click', function () {
+        hamburger.addEventListener('click', function () {
           nav.classList.toggle('open');
-      });
-      blackBg.addEventListener('click', function () {
+        });
+        blackBg.addEventListener('click', function () {
           nav.classList.remove('open');
-      });
+        });
       };
     </script>
   </head>
@@ -61,16 +61,17 @@
     </header>
 
     <div role="main" class="main">
-        <% for(var i in content) { %>
-          <table class="table">
-          <tr>
-            <% var obj = content[i]; %>
-            <th class="name">◆<%= obj.name %></th>
-            <td class="type">種類：<%= obj.type %></td>
-            <td class="detail"><%= obj.detail %></td>
-          </tr>
-          </table>
-        <% } %>
+      <% for(var i in content) { %>
+        <table class="table">
+        <tr>
+          <% var obj = content[i]; %>
+          <th class="name">◆<%= obj.name %></th>
+          <td class="type">種類：<%= obj.type %></td>
+          <td class="lonlat"><%= obj.lonlat %></td>
+          <td class="url">URL：<%= obj.url %></td>
+        </tr>
+        </table>
+      <% } %>
     </div>
 
     <footer>
@@ -81,6 +82,6 @@
         <a class="link" href="/howto">使い方</a>
         <a class="link" href="/map">マップ</a>
       </div>
-      </footer>
+    </footer>
   </body>
 </html>

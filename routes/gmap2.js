@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
             title: 'Board/Index',
             content: dtl
         }
-        res.render('gmap', data);
+        res.render('gmap2', data);
     });
 });
 

@@ -22,9 +22,10 @@ router.get('/add', (req, res, next) => {
 router.post('/add', (req, res, next) => {
     db.sequelize.sync()
     .then(() => db.Detail.create({
-        name: req.body.name,
         type: req.body.type,
-        detail: req.body.detail
+        name: req.body.name,
+        lonlat: req.body.lonlat,
+        url: req.body.url
     }))
     .then(dtl => {
         res.redirect('/users');

@@ -74,22 +74,19 @@
       <div class="thread-section">
        
       </div>
-      <table class="table">
-        <% for(let i in content) { %>
+      <div role="main" class="main">
+        <% for(var i in content) { %>
+          <table class="table">
           <tr>
-            <% let obj = content[i]; %>
-            <th class="name">
-              <%= obj.name %>
-            </th>
-            <th class="type">
-              <%= obj.type %>
-            </th>
-            <th class="detail">
-              <%= obj.detail %>
-            </th>
+            <% var obj = content[i]; %>
+            <th class="name">◆<%= obj.name %></th>
+            <td class="type">種類：<%= obj.type %></td>
+            <td class="lonlat"><%= obj.lonlat %></td>
+            <td class="url">URL：<%= obj.url %></td>
           </tr>
-          <% } %>
-      </table>
+          </table>
+        <% } %>
+    </div>
     </div>
 
     <footer>

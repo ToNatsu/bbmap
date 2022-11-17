@@ -209,6 +209,16 @@ header {
 	align-items: center;
 }
 
+.board-section a {
+    display: block;
+    color: #223843;
+    text-decoration: none;
+    list-style: none;
+    text-align: center; 
+    margin: 20px auto;
+    font-size: 20px;
+}
+
 .form-section p {
     font-size: 20px;
     /*線の種類（実線） 太さ 色*/
@@ -358,8 +368,7 @@ input, textarea {
     font-weight: 500;
 }
 
-
-.detail {
+.lonlat {
     text-align: left;
     font-size: 20px;
     padding: 3px 10px;
@@ -368,6 +377,14 @@ input, textarea {
     font-weight: 500;
 }
 
+.url {
+    text-align: left;
+    font-size: 20px;
+    padding: 3px 10px;
+    display: block;
+    font-family: "游ゴシック";
+    font-weight: 500;
+}
 
 
 
