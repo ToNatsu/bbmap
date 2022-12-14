@@ -21,6 +21,7 @@
       };
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ovNmsXnrwRBWSj8E7fVC8_jRqZ9ROlw&callback=initMap" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   </head>
   <body>
     <header>
@@ -54,9 +55,6 @@
           <li>
             <a href="/users/add">追加依頼</a>
           </li>
-          <li>
-            <a href="/users">追加予定</a>
-          </li>
         </ul>
       </div>
     </header>
@@ -65,114 +63,30 @@
       <p></p>
       <div id="map">
         <script>
-          router.get('/', (req, res, next) => {
-            db.Detail.findAll().then(dtl => {
-              var data = {
-                title: 'Board/Index',
-                content: dtl
-              }
-              res.render('gmap', data);
-              });
-          });
-
           function initMap() {
-            let map;
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: { // 地図の中心を指定
-              lat: 34.695537682859104, // 緯度
-              lng:  135.50223478878937 // 経度
-            },
-            zoom: 10 // 地図のズームを指定
-            });
-
-            const markerData = [{
-              "name": "淀屋橋駅",
-              "type": "改札内エレベーター",
-              "lat": 34.692208226274516,
-              "lng": 135.50106227529534,
-              "url": "https://goo.gl/maps/uipJzh6uqVQmfFVk8"
-            },
-            {
-              "name": "梅田駅",
-              "type": "改札外エレベーター",
-              "lat": 34.70321427033319,
-              "lng": 135.49764338944328,
-              "url": "https://goo.gl/maps/ckA28ah3BB2eUJre8"
-            },
-            ];
-
-            const marker = [];
-
-            const infoWindow = [];
-
-            // マーカーをクリックしたときのイベント登録
-            const markerEvent = (i) => {
-              marker[i].addListener('click', () => {
-                for (const j in marker) {
-                  //マーカーをクリックしたときに他の情報ウィンドウを閉じる
-                  infoWindow[j].close(map, marker[j]);
-                }
-                //クリックされたマーカーの吹き出し（情報ウィンドウ）を表示
-                infoWindow[i].open(map, marker[i]);
+            function success(pos) {
+              var lat = pos.coords.latitude;
+              var lng = pos.coords.longitude;
+              var latlng = new google.maps.LatLng(lat, lng); //中心の緯度, 経度
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: latlng
+              });
+              var marker = new google.maps.Marker({
+                position: latlng, //マーカーの位置（必須）
+                map: map //マーカーを表示する地図
               });
             }
-
-            for (let i = 0; i < markerData.length; i++) {
-                //マーカー作成
-                // 緯度経度のデータ作成
-                const markerLatLng = new google.maps.LatLng({
-                lat: markerData[i]['lat'],
-                lng: markerData[i]['lng']
-                });
-
-                //マーカーオプション設定
-                const markerOption = {
-                position: markerLatLng, // マーカーを立てる位置を指定
-                map: map, // マーカーを立てる地図を指定
-                };
-
-                /* if (markerData[i]['type'] === "改札内エレベーター") {
-                markerOption.icon = "image/elevator_door_open.png";
-                }
-                if (markerData[i]['type'] === "改札外エレベーター") {
-                markerOption.icon = "image/elevator_door_close.png"
-                }
-                if (markerData[i]['type'] === "音響信号") {
-                markerOption.icon = "image/shingou_hokousya_blue.png"
-                }
-                if (markerData[i]['type'] === "ホテル") {
-                markerOption.icon = "image/building_hotel_small.png"
-                }
-                if (markerData[i]['type'] === "旅館") {
-                markerOption.icon = "image/building_ryokan.png"
-                }
-                if (markerData[i]['type'] === "トイレ") {
-                markerOption.icon = "image/toilet_mark.png"
-                }
-                if (markerData[i]['type'] === "駐車場") {
-                markerOption.icon = "image/car_back.png"
-                }
-                if (markerData[i]['type'] === "AED") {
-                markerOption.icon = "image/shinpai_AED_mark.png"
-                } */
-
-                marker[i] = new google.maps.Marker(markerOption);
-                
-                infoWindow[i] = new google.maps.InfoWindow({
-                content: `<div class="custom-info">
-                    <div class="custom-info-item name">
-                    ${markerData[i]['name']}
-                    </div>
-                    <div class="custom-info-item google-map">
-                    <a href="${markerData[i]['url']}" target="_blank">MAP</a>
-                    </div>
-                    </div>` // 吹き出しに表示する内容
-                });
-
-                // 各マーカーにクリックイベントを追加
-                markerEvent(i);
+            function fail(error) {
+              alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
+              var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: latlng
+              });
             }
-          };
+            navigator.geolocation.getCurrentPosition(success, fail);
+          }
         </script>
       </div>
       <p></p>
@@ -187,6 +101,5 @@
           <a class="link" href="/map">マップ</a>
       </div>
     </footer>
-    <script src="../routes/gmap.js"></script>
   </body>
 </html>

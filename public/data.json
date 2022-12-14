@@ -1,0 +1,51 @@
+feed_callback({
+    "features": [{
+        "properties": {
+            "name": "ポイントA",
+            "type": "改札内エレベーター"
+        },
+        "geometry": {
+            "coordinates": [139.695718, 35.689748]
+        }
+    }, {
+        "properties": {
+            "name": "ポイントB",
+            "type": "トイレ"
+        },
+        "geometry": {
+            "coordinates": [139.697735, 35.693233]
+        }
+    }, {
+        "properties": {
+            "name": "ポイントC",
+            "type": "音響信号"
+        },
+        "geometry": {
+            "coordinates": [139.702563, 35.694976]
+        }
+    }, {
+        "properties": {
+            "name": "ポイントD",
+            "type": "ホテル"
+        },
+        "geometry": {
+            "coordinates": [139.696748, 35.688824]
+        }
+    }, {
+        "properties": {
+            "name": "ポイントE",
+            "type": "旅館"
+        },
+        "geometry": {
+            "coordinates": [139.697842, 35.684868]
+        }
+    }, {
+        "properties": {
+            "name": "梅田駅",
+            "type": "改札外エレベーター"
+        },
+        "geometry": {
+            "coordinates": [135.49764338944328, 34.70321427033319]
+        }
+    }]
+});

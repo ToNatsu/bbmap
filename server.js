@@ -65,6 +65,14 @@ app.get("/gmap2", (req, res) => {
     res.render('./gmap2');
 });
 
+app.get("/gmap3", (req, res) => {
+    res.render('./gmap3');
+});
+
+app.get("/gmap4", (req, res) => {
+    res.render('./gmap4');
+});
+
 app.get("/test", (req, res) => {
     res.render('./test');
 });

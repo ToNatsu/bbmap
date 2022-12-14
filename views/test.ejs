@@ -14,17 +14,23 @@
     
 
 
-    <div id="map" style="width:620px; height:400px"></div>
-
-    <script type="text/javascript">
-      function initMap() {
-        var opts = {
-          zoom: 15,
-          center: new google.maps.LatLng(35.709984,139.810703)
-        };
-        var map = new google.maps.Map(document.getElementById("map"), opts);
-      }
-      </script>
+    <% for(var i in content) { %>
+      <table class="table">
+      <tr>
+        <% var obj = content[i]; %>
+        <th class="name">◆<%= obj.name %></th>
+        <td class="type">種類：<%= obj.type %></td>
+        <% 
+          let lon = obj.lonlat.substr(0, obj.lonlat.indexOf(','));
+          let lat = obj.lonlat.substr(obj.lonlat.indexOf(',') + 1);
+        %>
+        <td class="lonlat"><%= lon %></td>
+        <td class="lonlat"><%= lat %></td>
+        <td class="lonlat"><%= obj.lonlat %></td>
+        <td class="url">URL：<%= obj.url %></td>
+      </tr>
+      </table>
+    <% } %>
 
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?v=3.exp?key=AIzaSyA7ovNmsXnrwRBWSj8E7fVC8_jRqZ9ROlw&callback=initMap">
