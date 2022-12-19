@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const cors = require('cors');
 const http = require("http");
 const server = http.createServer(app);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 var mainRouter = require('./routes/main');
 var boardRouter = require('./routes/board');

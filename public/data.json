@@ -1,19 +1,27 @@
 feed_callback({
     "features": [{
         "properties": {
-            "name": "ポイントA",
-            "type": "改札内エレベーター"
+            "name": "梅田駅",
+            "type": "改札外エレベーター"
         },
         "geometry": {
-            "coordinates": [139.695718, 35.689748]
+            "coordinates": [135.49764338944328, 34.70321427033319]
         }
     }, {
         "properties": {
-            "name": "ポイントB",
+            "name": "大阪梅田駅",
+            "type": "改札内エレベーター"
+        },
+        "geometry": {
+            "coordinates": [135.49842272309013, 34.70504468830315]
+        }
+    },{
+        "properties": {
+            "name": "東梅田駅",
             "type": "トイレ"
         },
         "geometry": {
-            "coordinates": [139.697735, 35.693233]
+            "coordinates": [135.49958143728352, 34.70077564460265]
         }
     }, {
         "properties": {
@@ -21,7 +29,7 @@ feed_callback({
             "type": "音響信号"
         },
         "geometry": {
-            "coordinates": [139.702563, 35.694976]
+            "coordinates": [135.49732838193353, 34.70412739170239]
         }
     }, {
         "properties": {
@@ -29,7 +37,7 @@ feed_callback({
             "type": "ホテル"
         },
         "geometry": {
-            "coordinates": [139.696748, 35.688824]
+            "coordinates": [135.49659882131147, 34.70065215657363]
         }
     }, {
         "properties": {
@@ -37,15 +45,23 @@ feed_callback({
             "type": "旅館"
         },
         "geometry": {
-            "coordinates": [139.697842, 35.684868]
+            "coordinates": [135.49739275516114, 34.70088149130013]
         }
     }, {
         "properties": {
-            "name": "梅田駅",
-            "type": "改札外エレベーター"
+            "name": "ヨドバシカメラ マルチメディア梅田",
+            "type": "車椅子使用者用駐車場"
         },
         "geometry": {
-            "coordinates": [135.49764338944328, 34.70321427033319]
+            "coordinates": [135.4962582884966, 34.70406895778555]
+        }
+    }, {
+        "properties": {
+            "name": "ルクア大阪",
+            "type": "AED"
+        },
+        "geometry": {
+            "coordinates": [135.4955501853784, 34.70288704057479]
         }
     }]
 });

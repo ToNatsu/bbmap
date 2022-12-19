@@ -82,7 +82,7 @@
           function fail(error) {
             alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
             var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
-            map = new google.maps.Map(document.getElementById('maps'), {
+            map = new google.maps.Map(document.getElementById('map'), {
               zoom: 10,
               center: latlng
             });
@@ -128,7 +128,7 @@
               if (results.features[i].properties.type === 'トイレ') {
                 markerOption.icon = 'image/toilet.png'
               }
-              if (results.features[i].properties.type === '車いす使用者用駐車場') {
+              if (results.features[i].properties.type === '車椅子使用者用駐車場') {
                 markerOption.icon = 'image/parking.png'
               }
               if (results.features[i].properties.type === 'AED') {
@@ -148,6 +148,8 @@
               }).open(markerOption.getMap(), markerOption);
             });
           }
+              
+        
         </script>
       </div>
       <p></p>
